@@ -2,9 +2,9 @@
 <div class="container">
   <div class="row">
     <hr>
-    <div class="col-xs-7">
+    <div class="col-xs-10">
      
-     <app-game-control (indexNumber)="onIntervalRun($event)" ></app-game-control>
+     <app-game-control (indexNumber)="onIntervalRun($event)" (emitEvent)="onEmitClear()" ></app-game-control>
      
     </div>
     <div class="col-xs-1" style="border:1px solid rgb(0, 0, 0); background:mediumslateblue; height:100%; font-size: 18px; color: white; text-align: center;">
@@ -13,11 +13,11 @@
   </div>
   <hr>
   <div class="row">
-    <div class="col-xs-5">
+    <div class="col-xs-6">
       <app-odd [oddNumber]="x"  *ngFor="let x of oddNumber" ></app-odd>
     </div>
     
-    <div class="col-xs-5">
+    <div class="col-xs-6">
       <app-even [evenNumber]="x"  *ngFor="let x of evenNumber" ></app-even>
     </div>
   </div>

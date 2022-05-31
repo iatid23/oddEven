@@ -1,2 +1,18 @@
-<button class="btn btn-success" (click)="onStartGame()">Start Game</button>
-<button class="btn btn-danger" (click)="onEndGame()">Stop Game</button>
+<div class="row">
+    <div class="col-xs-4">
+        <button class="btn btn-success" [disabled]="!disableButton" (click)="onStartGame()">Start Game</button>
+        <button class="btn btn-danger"  (click)="onEndGame()">Stop Game</button>
+        <button class="btn btn-primary" (click)="onClear()">Clear</button>
+        
+    </div>
+    <div class="col-xs-6">
+
+        <button class="btn btn-info" (click)="onSpeedUp()">Speed Up x2</button>
+        <button class="btn btn-info" (click)="onSpeedDown()">Speed Down x2</button>
+        <button class="btn btn-info" (click)="onSpeedClear()">Back to Normal Speed</button>
+    </div>
+    <div class="col-xs-1">
+
+        {{ speedIntreval }}
+    </div>
+</div>

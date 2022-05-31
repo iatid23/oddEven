@@ -6,9 +6,13 @@ import { Component, Input, OnInit,EventEmitter, Output } from '@angular/core';
   styleUrls: ['./game-control.component.css']
 })
 export class GameControlComponent implements OnInit {
+  speedIntreval = 1000;
   interval;
   i:number=0;
   @Output() indexNumber = new EventEmitter<number>();
+  @Output() emitEvent = new EventEmitter<Event>();
+  disableButton = true;
+  
 
   constructor() { }
 
@@ -16,16 +20,60 @@ export class GameControlComponent implements OnInit {
   }
 
   onStartGame(){
-    this.interval=setInterval(()=>{ 
+    this.disableButton = !this.disableButton;
+    this.interval = setInterval(()=>{ 
       console.log(this.i);
       this.indexNumber.emit(this.i);
       this.i++;
-    }, 1000);//run this thang every 2 seconds
+      console.log(this.speedIntreval);
+    }, this.speedIntreval);
   }
 
   onEndGame(){
     clearInterval(this.interval);
+    this.disableButton = !this.disableButton;
+    
+    
 
   }
+
+  onClear(){
+    this.emitEvent.emit();
+    this.i=0;
+    this.onSpeedClear();
+
+  }
+
+  onSpeedUp(){
+    clearInterval(this.interval);
+    this.speedIntreval = this.speedIntreval/2;
+    this.interval = setInterval(()=>{ 
+      console.log(this.i);
+      this.indexNumber.emit(this.i);
+      this.i++;
+      console.log(this.speedIntreval);
+    }, this.speedIntreval);
+  }
+  onSpeedDown(){
+    clearInterval(this.interval);
+    this.speedIntreval = this.speedIntreval*2;
+    this.interval = setInterval(()=>{ 
+      console.log(this.i);
+      this.indexNumber.emit(this.i);
+      this.i++;
+      console.log(this.speedIntreval);
+    }, this.speedIntreval);
+  }
+  onSpeedClear(){
+    clearInterval(this.interval);
+    this.speedIntreval = 1000;
+    this.interval = setInterval(()=>{ 
+      console.log(this.i);
+      this.indexNumber.emit(this.i);
+      this.i++;
+      console.log(this.speedIntreval);
+    }, this.speedIntreval);//run this thang every 2 seconds
+  }
+
 
 }
