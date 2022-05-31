@@ -1,10 +1,13 @@
-import { Directive, ElementRef, HostBinding, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appHostbinding]'
 })
 export class HostbindingDirective implements OnInit{
-  @HostBinding('style.backgroundColor') backgroundColor: string = 'purple';
+
+  @Input() defColor: string = 'transparent';
+  @Input() HLColor: string = 'transparent';
+  @HostBinding('style.backgroundColor') backgroundColor: string = this.HLColor;
 
   constructor() { }
 
@@ -14,12 +17,12 @@ export class HostbindingDirective implements OnInit{
 
   @HostListener('mouseenter') mouseover(event: Event) {
     //this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'green');
-    this.backgroundColor = 'blue';
+    this.backgroundColor = this.HLColor;
 }
 
 @HostListener('mouseout') mouseoout (event: Event) {
     //this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'red');
-    this.backgroundColor = 'yellow';
+    this.backgroundColor = this.defColor;
 }
 
 

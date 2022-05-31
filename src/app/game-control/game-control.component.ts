@@ -12,6 +12,8 @@ export class GameControlComponent implements OnInit {
   @Output() indexNumber = new EventEmitter<number>(); //trigger start
   @Output() emitEvent = new EventEmitter<Event>();
   disableButton = true;
+  defC;
+  hC;
   
 
   constructor() { }

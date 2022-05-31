@@ -21,6 +21,10 @@
         
     </div>
     <label appHighLightRenderer>Test</label>
-    <label appHostbinding>xxdcdx</label>
+    <input type="text" [(ngModel)]="defC">
+    
+    <input type="text" [(ngModel)]="hC">
+    <label appHostbinding  [HLColor]="hC" [defColor]="defC">xxdcdx</label>
+    
     
 </div>

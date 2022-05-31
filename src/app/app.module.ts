@@ -8,6 +8,7 @@ import { EvenComponent } from './even/even.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { HighlightRendererDirective } from './directives/highlight-renderer.deirective';
 import { HostbindingDirective } from './directives/hostbinding.directive';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HostbindingDirective } from './directives/hostbinding.directive';
     HostbindingDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
