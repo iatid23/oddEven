@@ -7,6 +7,7 @@ import { OddComponent } from './odd/odd.component';
 import { EvenComponent } from './even/even.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { HighlightRendererDirective } from './directives/highlight-renderer.deirective';
+import { HostbindingDirective } from './directives/hostbinding.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HighlightRendererDirective } from './directives/highlight-renderer.deir
     OddComponent,
     EvenComponent,
     HighlightDirective,
-    HighlightRendererDirective
+    HighlightRendererDirective,
+    HostbindingDirective
   ],
   imports: [
     BrowserModule
