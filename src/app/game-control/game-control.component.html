@@ -24,7 +24,8 @@
     <input type="text" [(ngModel)]="defC">
     
     <input type="text" [(ngModel)]="hC">
-    <label appHostbinding  [HLColor]="hC" [defColor]="defC">xxdcdx</label>
+    <label *appUnless="chk" appHostbinding  [HLColor]="hC" [defColor]="defC">xxdcdx</label>
+    <button class="btn btn-info" (click)="onShow()">Show/Hide</button>
     
     
 </div>

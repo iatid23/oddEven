@@ -9,6 +9,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { HighlightRendererDirective } from './directives/highlight-renderer.deirective';
 import { HostbindingDirective } from './directives/hostbinding.directive';
 import { FormsModule } from '@angular/forms';
+import { UnlessDirective } from './directives/unless.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     EvenComponent,
     HighlightDirective,
     HighlightRendererDirective,
-    HostbindingDirective
+    HostbindingDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,7 @@ export class GameControlComponent implements OnInit {
   disableButton = true;
   defC;
   hC;
+  chk = false;
   
 
   constructor() { }
@@ -75,6 +76,10 @@ export class GameControlComponent implements OnInit {
       this.i++;
       console.log(this.speedIntreval);
     }, this.speedIntreval);//run this thang every 2 seconds
+  }
+
+  onShow(){
+    this.chk = !this.chk;
   }
 
 
