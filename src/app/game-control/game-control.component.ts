@@ -1,4 +1,4 @@
-import { Component, Input, OnInit,EventEmitter, Output } from '@angular/core';
+import { Component, OnInit,EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-game-control',
@@ -9,7 +9,7 @@ export class GameControlComponent implements OnInit {
   speedIntreval = 1000;
   interval;
   i:number=0;
-  @Output() indexNumber = new EventEmitter<number>();
+  @Output() indexNumber = new EventEmitter<number>(); //trigger start
   @Output() emitEvent = new EventEmitter<Event>();
   disableButton = true;
   
