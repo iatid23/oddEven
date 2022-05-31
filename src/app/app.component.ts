@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'BindIt';
+  oddNumber:number[]= [];
+  evenNumber:number[] = [];
+  ;
+
+  intervalNumber = 0;
+
+  onIntervalRun(event: number){
+    this.intervalNumber = event;
+    if (this.intervalNumber % 2 !== 0 ){
+      this.oddNumber.push(event);
+    
+    }else{
+      this.evenNumber.push(event);
+    }
+    console.log(this.intervalNumber);
+  }
 }
