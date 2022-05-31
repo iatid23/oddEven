@@ -15,6 +15,7 @@ export class GameControlComponent implements OnInit {
   defC;
   hC;
   chk = false;
+  val = 5;
   
 
   constructor() { }

@@ -26,6 +26,12 @@
     <input type="text" [(ngModel)]="hC">
     <label *appUnless="chk" appHostbinding  [HLColor]="hC" [defColor]="defC">xxdcdx</label>
     <button class="btn btn-info" (click)="onShow()">Show/Hide</button>
+    <div [ngSwitch]="val">
+        <p *ngSwitchCase="5">Val is 5</p>
+        <p *ngSwitchCase="7">Val is 3</p>
+        <p *ngSwitchCase="12">Val is 12</p>
+        <p *ngSwitchDefault>Val is Default</p>
+    </div>
     
     
 </div>
